@@ -11,7 +11,7 @@ package com.kmne68.recklessdriver;
  * 
  * Manage player vehicle
  */
-public class Player {
+public class Player extends GameObject {
     
     private int health;
     private PlayerVehicle vehicle;
