@@ -29,7 +29,7 @@ public class PlayerVehicle {
         return name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
@@ -37,7 +37,7 @@ public class PlayerVehicle {
         return handling;
     }
 
-    public void setHandling(int handling) {
+    private void setHandling(int handling) {
         this.handling = handling;
     }
 
@@ -45,7 +45,7 @@ public class PlayerVehicle {
         return topSpeed;
     }
 
-    public void setTopSpeed(int topSpeed) {
+    private void setTopSpeed(int topSpeed) {
         this.topSpeed = topSpeed;
     }
 
@@ -53,7 +53,7 @@ public class PlayerVehicle {
         return strength;
     }
 
-    public void setStrength(int strength) {
+    private void setStrength(int strength) {
         this.strength = strength;
     }
     

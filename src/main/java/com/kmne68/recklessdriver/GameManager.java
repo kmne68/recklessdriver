@@ -30,6 +30,7 @@ public class GameManager {
         player.setName("Player");
         
         // Prepare the scenery
+        
         // Loop through player driving/colliding
         while(player.IsAlive()){
             // Generate gameobjects (sideobjects, traffic, etc)
