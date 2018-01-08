@@ -9,18 +9,15 @@ package com.kmne68.recklessdriver;
  *
  * @author kemery
  */
-public class FireHydrant extends SideObject {
-
-    public FireHydrant(int damage, int cash) {
-        super(damage, cash);
-        setName("Fire Hydrant");
+public class LetterBox extends SideObject {
+    
+    public LetterBox(int damage, int cash) {
+        super (damage, cash);
+        setName("Letter Box");
     }
-
+    
     @Override
     public void OnCollision(GameObject other) {
-        super.OnCollision(other); 
+        super.OnCollision(other);
     }
-    
-    
-    
 }
