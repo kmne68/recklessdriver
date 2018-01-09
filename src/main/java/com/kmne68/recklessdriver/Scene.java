@@ -16,6 +16,7 @@ public class Scene {
 
     private static final int TOTAL_SIDEOBJECTS = 2;
     private static final int TOTAL_TRAFFIC = 2;
+    private static final int NPC_TYPES = 2;
 
     private ArrayList<TrafficCar> trafficList = new ArrayList();
     private ArrayList<SideObject> sideList = new ArrayList();
@@ -28,12 +29,41 @@ public class Scene {
     }
 
     public void GenerateNPCs() {
-
+        
+        if(sideList.size() > 6) {
+            sideList.remove(0);
+        }
+        if(trafficList.size() > 6) {
+            trafficList.remove(0);            
+        }
         sideList.add(GenerateSideObject());
         trafficList.add(GenerateTraffic());
         DisplaySideObjects();
         DisplayTraffic();
 
+    }
+    
+    
+    public void Collide() {
+        GameObject go = null;
+        switch(random.nextInt(NPC_TYPES)) {
+            case 0: // Side objectes
+                go = sideList.get(random.nextInt(sideList.size())); // return a random side object
+                go.OnCollision((player));
+                break;
+            case 1: // Traffic
+                go = trafficList.get(random.nextInt(trafficList.size())); // return a random side object
+                go.OnCollision((player));
+                break;
+        }
+        go.OnCollision(player);
+        if(go != null) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private SideObject GenerateSideObject() {

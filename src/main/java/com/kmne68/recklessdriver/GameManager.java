@@ -5,6 +5,9 @@
  */
 package com.kmne68.recklessdriver;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author kemery
@@ -30,16 +33,37 @@ public class GameManager {
         player.setName("Player");
         
         // Prepare the scenery
+        Scene scene = new Scene();
+        scene.Start(player);
         
         // Loop through player driving/colliding
         while(player.IsAlive()){
+            
             // Generate gameobjects (sideobjects, traffic, etc)
+            scene.GenerateNPCs();       
+            
+            // Player drives car
+            Drive();
+            
             // Collide with other objects
+            scene.Collide();
+
             // Repeat until health = 0
         }
+        EndGame();
     }
     
     public void EndGame() {
         System.out.printf("Total cash accumulated : %d", cash);
+    }
+
+    private void Drive() {
+        
+        System.out.println("\nPlayer is driving the car.");
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(GameManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
