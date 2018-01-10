@@ -20,7 +20,7 @@ public class SideObject extends GameObject {
     
     private int damage;
     private int cash;
-    private int count; // number of times a object has been in a collision
+    protected int count; // number of times a object has been in a collision
 
     public int getDamage() {
         return damage;

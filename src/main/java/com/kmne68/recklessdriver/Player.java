@@ -21,6 +21,7 @@ public class Player extends GameObject {
         
         this.health = health;
         this.vehicle = vehicle;
+        setName("Player");
         
     }
     

@@ -10,13 +10,21 @@ package com.kmne68.recklessdriver;
  * @author kemery
  */
 public class Van extends TrafficCar {
-    
+
     public Van(int damage, int cash) {
-        super (damage, cash);
+        super(damage, cash);
+        setName("Van");
     }
-    
+
     @Override
     public void OnCollision(GameObject other) {
-        super.OnCollision(other);
+
+        if (other.getName().equals("Player")) {
+            Player player = (Player) other; // downcast 'other' to Player object
+
+            System.out.println("### COLLISION -> [Van] Milk bottles flying");
+            player.ApplyDamage(getDamage(), getCash());
+
+        }
     }
 }
