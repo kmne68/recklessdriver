@@ -16,8 +16,7 @@ public class RecklessDriverApp {
      */
     public static void main(String[] args) {
         
-        GameManager mgr = new GameManager();
-        
-        mgr.NewGame();
+        GameManager.getInstance().NewGame();
+
     }
 }

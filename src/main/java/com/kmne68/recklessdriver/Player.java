@@ -31,7 +31,8 @@ public class Player extends GameObject {
     
     public void ApplyDamage(int damage, int cash) {
         health -= damage - vehicle.getStrength();        
-        
+        System.out.printf("Player health: %d\n", health < 0 ? 0 : health);
+        GameManager.getInstance().AddCash(cash);
     }
     
     public void Accelerate() {

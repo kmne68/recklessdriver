@@ -46,6 +46,12 @@ public class Scene {
     
     public void Collide() {
         GameObject go = null;
+        
+        // only collide 50% of the time
+        random.nextBoolean();
+        if(random.nextBoolean() == false)
+            return;
+        
         switch(random.nextInt(NPC_TYPES)) {
             case 0: // Side objectes
                 go = sideList.get(random.nextInt(sideList.size())); // return a random side object
